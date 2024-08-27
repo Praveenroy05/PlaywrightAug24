@@ -1,6 +1,6 @@
 const {test, expect} = require("@playwright/test");
 
-test.describe.configure({ mode: 'parallel' });
+//test.describe.configure({ mode: 'parallel' });
 
 test("First Test Case in Playwright", {tag: '@smoke'}, async function({page}){
 
@@ -71,7 +71,7 @@ test("Correct login validation", async function({page}){
 
 });
 
-test.only("Drop down" ,async ({page})=>{
+test("Drop down" ,async ({page})=>{
    await page.goto("https://practice.expandtesting.com/dropdown")
    await page.selectOption("id=country","Afghanistan")
    await page.waitForTimeout(2000)
