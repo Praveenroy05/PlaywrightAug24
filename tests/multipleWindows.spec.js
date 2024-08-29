@@ -9,8 +9,9 @@ const {test, expect} = require('@playwright/test')
 
 test("Child window validation", async ({browser})=>{
 
-    const context = await browser.newContext()
+    const context = await browser.newContext({})
     const page = await context.newPage()
+
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     const page1 = context.waitForEvent('page')

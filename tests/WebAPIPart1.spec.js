@@ -1,9 +1,25 @@
-//import {test, expect} from '@playwright/test'
 const {test, expect} = require('@playwright/test')
 
-const productName = "ADIDAS ORIGINAL"
+//const productName = "ADIDAS ORIGINAL"
 
-test.only("E2E validation of product order", async ({page})=>{
+test.beforeAll( async ()=>{
+    await console.log("Before All")
+}) 
+test.beforeEach(async ()=>{
+    await console.log("Before Each")
+
+})
+test.afterEach(async ()=>{
+    await console.log("After Each")
+})
+test.afterAll(async ()=>{
+    await console.log("After All")
+
+})
+
+// test1, test2, test3
+
+//test("E2E validation of product order", async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/client")
     await page.getByPlaceholder("email@example.com").fill("test7lYM@gmail.com")
@@ -60,4 +76,17 @@ for(let i=0; i<rowsCount; i++){
 const orderSumarryOrderID = await page.locator(".col-text").first().textContent()
 expect(orderID.includes(orderSumarryOrderID)).toBeTruthy()
 
+//})
+
+test("one", async ({page})=>{
+    await console.log("First one")
 })
+
+test("Two", async ({page})=>{
+    await console.log("Second one")
+})
+
+test("Three", async ({page})=>{
+    await console.log("THird one")
+})
+
