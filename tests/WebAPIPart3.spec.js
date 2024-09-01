@@ -2,38 +2,22 @@ const {test, expect, request} = require('@playwright/test')
 
 const productName = "ADIDAS ORIGINAL"
 
-const payload = {userEmail: "test7lYM@gmail.com", userPassword: "Test@123"}
-let token
-test.beforeAll(async ()=>{
-    const apiContext = await request.newContext()
-    const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login", {
-
-        data : payload
-    })
-
-    //console.log(await loginResponse.json())
-
-    const loginResponseJson = await loginResponse.json()
-
-    token = await loginResponseJson.token
-    console.log(token)
+test.beforeAll(async ({browser})=>{
+    const context  = await browser.newContext()
+    const page = await context.newPage()
+    await page.goto("https://rahulshettyacademy.com/client")
+    await page.getByPlaceholder("email@example.com").fill("test7lYM@gmail.com")
+    await page.locator("#userPassword").fill("Test@123")
+    await page.getByRole('button', {name:'Login'}).click()
+    await expect(page.getByRole('button', {name:'HOME'})).toBeVisible()
+    await context.storageState({path : 'storagestate.json'})
 
 })
 
-
-
-test("E2E validation of product order", async ({page})=>{
-//token
-    page.addInitScript((value) =>{
-        window.localStorage.setItem('token',value)
-    }, token)
-
-    
+test("E2E validation of product order", async ({browser})=>{
+    const context = await browser.newContext({storageState:'storageState.json'})
+    const page = await context.newPage()
     await page.goto("https://rahulshettyacademy.com/client")
-    // // await page.getByPlaceholder("email@example.com").fill("test7lYM@gmail.com")
-    // // await page.locator("#userPassword").fill("Test@123")
-    // // await page.getByRole('button', {name:'Login'}).click()
-    // await expect(page.getByRole('button', {name:'HOME'})).toBeVisible()
     const products = page.locator("div.card-body")
     await products.first().waitFor()
     const productText = await products.locator("b").allTextContents()
