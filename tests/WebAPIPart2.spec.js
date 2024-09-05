@@ -10,9 +10,6 @@ test.beforeAll(async ()=>{
 
         data : payload
     })
-
-    //console.log(await loginResponse.json())
-
     const loginResponseJson = await loginResponse.json()
 
     token = await loginResponseJson.token
@@ -28,7 +25,7 @@ test("E2E validation of product order", async ({page})=>{
         window.localStorage.setItem('token',value)
     }, token)
 
-    
+
     await page.goto("https://rahulshettyacademy.com/client")
     // // await page.getByPlaceholder("email@example.com").fill("test7lYM@gmail.com")
     // // await page.locator("#userPassword").fill("Test@123")

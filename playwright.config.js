@@ -22,7 +22,7 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html'], ['line'],["allure-playwright"]],
   
   timeout : 30*1000,
   expect:{
@@ -38,19 +38,18 @@ module.exports = defineConfig({
     trace: 'on',
     screenshot : 'on',
     video: 'on',
-    headless : false,
-    browserName: 'chromium',
+    headless : false
    
   },
 
   /* Configure projects for major browsers */
-  /*projects: [
+  projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
-   /* {
+    {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
@@ -58,7 +57,7 @@ module.exports = defineConfig({
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
-    },*/
+    },
 
     /* Test against mobile viewports. */
     // {
@@ -79,7 +78,7 @@ module.exports = defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
-  //], 
+  ], 
 
   /* Run your local dev server before starting the tests */
   // webServer: {

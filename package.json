@@ -9,7 +9,9 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.46.0",
-    "@types/node": "^22.1.0"
+    "@types/node": "^22.1.0",
+    "allure-commandline": "^2.30.0",
+    "allure-playwright": "^3.0.0-beta.11"
   },
   "dependencies": {
     "pwaug20241": "file:"
