@@ -14,7 +14,9 @@ test.beforeAll(async ({browser})=>{
 
 })
 
-test("E2E validation of product order", async ({browser})=>{
+test("E2E validation of product order", {tag: '@API'}, async ({browser})=>{
+    
+
     const context = await browser.newContext({storageState:'storageState.json'})
     const page = await context.newPage()
     await page.goto("https://rahulshettyacademy.com/client")

@@ -1,6 +1,6 @@
 const  {test, expect} = require('@playwright/test')
 
-test("Login into the app", async ({page})=>{
+test("Login into the app", {tag : '@Smoke'}, async ({page})=>{
     
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     // locator() - is use to help in the writing the locators in PW
@@ -20,7 +20,7 @@ test("Login into the app", async ({page})=>{
 // By default paywright will wait for 30 second for any of the method that identify the element uniquely.
 // For assertion that is expect() will have by default a waiting time of 5 seconds
 
-test("Checkbox, radio button and drop down", async function({page}){
+test("Checkbox, radio button and drop down", {tag : '@Smoke'}, async function({page}){
 
     await page.goto("https://rahulshettyacademy.com/angularpractice/")
     // first()  -  This will identify 1st matching element inside the webpage
@@ -40,7 +40,7 @@ test("Checkbox, radio button and drop down", async function({page}){
 
 })
 
-test("Drop down", async ({page})=>{
+test("Drop down", {tag : '@Smoke'}, async ({page})=>{
     // selectOption() - Select the values from the static drop down
     await page.goto("https://practice.expandtesting.com/dropdown")
     await page.selectOption("//select[@id='country']", {value : "US"})
@@ -57,7 +57,7 @@ test("Drop down", async ({page})=>{
 
 // dbl click, right click
 
-test("Mouse operation", async ({page})=>{
+test("Mouse operation",{tag : '@Smoke'},  async ({page})=>{
     // dblclick() - Double click on the element
     await page.locator('text=right click me').click({button : "right"})
     await page.waitForTimeout(3000)
@@ -73,7 +73,7 @@ test("Mouse operation", async ({page})=>{
     
 })
 
-test("Double click", async ({page})=>{
+test("Double click", {tag : '@Smoke'}, async ({page})=>{
     await page.goto("https://demo.guru99.com/test/simple_context_menu.html")
     page.on('dialog', (dialog) =>{
         console.log(dialog.message())
@@ -83,7 +83,7 @@ test("Double click", async ({page})=>{
     await page.waitForTimeout(3000)
 })
 
-test("Upload file test" , async ({page})=>{
+test("Upload file test" , {tag : '@Smoke'}, async ({page})=>{
     //setInputFiles("path of the file") - Which is use to upload the file on the app
     await page.goto("https://cgi-lib.berkeley.edu/ex/fup.html")
     await page.locator("[name='upfile']").setInputFiles("C:\\Users\\prave\\OneDrive\\Desktop\\Docker.txt")

@@ -15,7 +15,7 @@ test("First Test Case in Playwright", {tag: '@smoke'}, async function({page}){
 
 });
 
-test("Tab @smoke Handling", async({browser})=>{
+test("Tab Handling", async({browser})=>{
 
    const context = await browser.newContext()
    const page = await context.newPage()

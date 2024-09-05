@@ -2,7 +2,11 @@
   "name": "pwaug20241",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "regression" : "npx playwright test",
+    "smoke" : "npx playwright test --grep @Smoke ",
+    "api" : "npx playwright test --grep @API "
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
