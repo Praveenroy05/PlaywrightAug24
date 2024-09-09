@@ -2,7 +2,7 @@ const {test, expect} = require("@playwright/test");
 
 //test.describe.configure({ mode: 'parallel' });
 
-test("First Test Case in Playwright", {tag: '@smoke'}, async function({page}){
+test("First Test Case in Playwright",{tag : '@smoke'}, async function({page}){
 
    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
    await page.locator("#username").fill("rahulshettyacademy")
@@ -15,7 +15,7 @@ test("First Test Case in Playwright", {tag: '@smoke'}, async function({page}){
 
 });
 
-test("Tab Handling", async({browser})=>{
+test("Tab Handling", {tag : '@smoke'}, async({browser})=>{
 
    const context = await browser.newContext()
    const page = await context.newPage()
@@ -28,7 +28,7 @@ test("Tab Handling", async({browser})=>{
    expect(await newPage.locator("text=Documents request").isVisible());
 });
 
-test("Incorrect login", async ({page})=>{
+test("Incorrect login", {tag : '@regression'}, async ({page})=>{
 
    await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
    await page.locator("#username").pressSequentially("Paveen")
@@ -41,7 +41,7 @@ test("Incorrect login", async ({page})=>{
 
 });
 
-test("Select from the drop down and click on checkbox", async ({page})=>{
+test("Select from the drop down and click on checkbox", {tag : '@smoke'}, async ({page})=>{
 
    await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
    await page.locator("#username").pressSequentially("rahulshettyacademy")
@@ -52,7 +52,7 @@ test("Select from the drop down and click on checkbox", async ({page})=>{
    
 });
 
-test("Correct login validation", async function({page}){
+test("Correct login validation", {tag : '@smoke'}, async function({page}){
 
    const products = page.locator("h4.card-title")
 
@@ -71,7 +71,7 @@ test("Correct login validation", async function({page}){
 
 });
 
-test("Drop down" ,async ({page})=>{
+test("Drop down" ,{tag : '@regression'}, async ({page})=>{
    await page.goto("https://practice.expandtesting.com/dropdown")
    await page.selectOption("id=country","Afghanistan")
    await page.waitForTimeout(2000)

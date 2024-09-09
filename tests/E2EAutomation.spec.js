@@ -3,7 +3,7 @@ const {test, expect} = require('@playwright/test')
 
 const productName = "ADIDAS ORIGINAL"
 
-test.only("E2E validation of product order", async ({page})=>{
+test("E2E validation of product order", async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/client")
     await page.getByPlaceholder("email@example.com").fill("test7lYM@gmail.com")

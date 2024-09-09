@@ -3,7 +3,7 @@
 const {test, expect} = require('@playwright/test')
 
 test("First Test Case",  async function({browser}) {
-    // Your test code here
+    // Your test code goes here
     // browser - fixture
     // Create a browser instance - 
     // Create a page to work with

@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "regression" : "npx playwright test",
-    "smoke" : "npx playwright test --grep @Smoke ",
-    "api" : "npx playwright test --grep @API "
+    "fulltest": "npx playwright test",
+    "smoke" : "npx playwright test --grep @smoke",
+    "regression" : "npx playwright test --grep @regression",
+    "api" : "npx playwright test --grep @api",
+    "allure:generate": "npx allure generate allure-results -o --clean allure-results",
+    "allure:open": "npx allure open allure-results"
   },
   "keywords": [],
   "author": "",
@@ -21,3 +24,4 @@
     "pwaug20241": "file:"
   }
 }
+
