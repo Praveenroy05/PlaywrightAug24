@@ -17,7 +17,7 @@ test.beforeAll(async ()=>{
 
 
 
-test("E2E validation of product order", async ({page})=>{
+test("E2E validation of product order", {tag : '@api'},async ({page})=>{
 //token
     await page.addInitScript((value) =>{
         window.localStorage.setItem('token',value)

@@ -14,7 +14,7 @@ test.beforeAll(async ({browser})=>{
 
 })
 
-test("E2E validation of product order", {tag: '@API'}, async ({browser})=>{
+test("E2E validation of product order", {tag : '@api'},async ({browser})=>{
     
 
     const context = await browser.newContext({storageState:'storageState.json'})
