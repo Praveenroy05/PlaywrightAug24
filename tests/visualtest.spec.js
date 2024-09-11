@@ -26,7 +26,7 @@ test('Partial page screenshot', async ({page}) => {
 
 test.only("Visual Testing", async ({page})=>{
 
-    await page.goto("https://google.com")
-    await expect(await page.screenshot()).toMatchSnapshot("google1.png")
+    await page.goto("https://www.flightaware.com/")
+    await expect(await page.screenshot()).toMatchSnapshot("flight.png")
 
 })

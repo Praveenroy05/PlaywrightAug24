@@ -43,9 +43,12 @@ test("Slow",async({page})=>{
 
 // Taking screenshot and Visual Testing
 // GitHub - clone/push/pull
+
 // Jenkins integration
 // json/excel file handling
+
 // BDD cucumber framework
+// scrolling
 
 
 // To clone the repository we have to use the below command
