@@ -85,6 +85,8 @@ test("Slow",async({page})=>{
  * 1. To check the status - git status
  * 2. To add all the changes to the local git first - git add .
  * 3. To commit all the changes  - git commit -m "added login page test script"
+ * 4. After creating new branch if you want to push the code for the first time we have to use below command:
+ *  git push --set-upstream origin branchname. Ex:- loginpagesept24
  * 
  * 
  * 
