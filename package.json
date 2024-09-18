@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "fulltest": "npx playwright test",
-    "smoke" : "npx playwright test --grep @smoke",
-    "regression" : "npx playwright test --grep @regression",
-    "api" : "npx playwright test --grep @api",
+    "smoke": "npx playwright test --grep @smoke",
+    "regression": "npx playwright test --grep @regression",
+    "api": "npx playwright test --grep @api",
     "allure:generate": "npx allure generate allure-results -o --clean allure-results",
     "allure:open": "npx allure open allure-results"
   },
@@ -15,13 +15,15 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@cucumber/cucumber": "^11.0.1",
     "@playwright/test": "^1.46.0",
     "@types/node": "^22.1.0",
     "allure-commandline": "^2.30.0",
     "allure-playwright": "^3.0.0-beta.11"
   },
   "dependencies": {
-    "pwaug20241": "file:"
+    "exceljs": "^4.4.0",
+    "pwaug20241": "file:",
+    "xlsx": "^0.18.5"
   }
 }
-

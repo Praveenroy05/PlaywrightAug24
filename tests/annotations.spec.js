@@ -41,14 +41,59 @@ test("Slow",async({page})=>{
     await expect(page.getByRole('button', {name:'HOME'})).toBeVisible()
 })
 
-// Taking screenshot and Visual Testing
-// GitHub - clone/push/pull
-
-// Jenkins integration
-// json/excel file handling
-
-// BDD cucumber framework
+// donwload a file
 // scrolling
+// Jenkins
+
+
+ // - We need to have java install in our system.
+
+// 1. download jenkins war file
+// 2. Start the jenkins - Admin - Generate a password - It will ask us to create a new
+// 3. Install few of the plugins - Recommended plugins and Customized plugin
+// 4. Jenkins dashboard
+// 5. We have to setup the project to run the code
+
+
+
+// Cucumber framework
+
+// STep - 1 : TO install cucumber in playwright -jS
+// npm install --save-dev @cucumber/cucumber
+
+// STep -2:
+// We have to create a page layer - Page classes
+
+// STep -3 :
+// We have to create  feature files
+
+// features - folder
+// loginPage.feature extension
+
+// STep - 4
+// Create step definitions to map all the steps inside the feature file
+
+
+
+
+
+// Test cases in a plane english  - Gherkin language
+// Given, When Then and But
+
+// Given - We are on the login page - Application has  - Preconditions - 
+// When - Whatever the action we need to perform we will be writing using When 
+// And - 
+// Then - Go for the assertion - We will redirect to the Home page
+
+
+// Page layer - Initialize the locators and methods
+// Feature file - This file will consitst of all the TCs  - Gherkin language
+// Step definition file - This file will have the code for the step definitions - Javascript
+
+// cucumber-js
+
+
+
 
 
 // To clone the repository we have to use the below command
