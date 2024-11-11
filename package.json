@@ -7,7 +7,7 @@
     "smoke": "npx playwright test --grep @smoke",
     "regression": "npx playwright test --grep @regression",
     "api": "npx playwright test --grep @api",
-    "allure:generate": "npx allure generate allure-results -o --clean allure-results",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-results",
     "allure:open": "npx allure open allure-results"
   },
   "keywords": [],
